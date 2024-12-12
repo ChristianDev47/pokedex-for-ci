@@ -10,13 +10,11 @@ pipeline {
       steps{
         cleanWs()
       }
-    }
-  }
-
-  stages {
+    } 
+    
     stage("Checkout from SCM") {
       steps {
-        git branch: 'main', credentials: 'github', url: 'https://github.com/ChristianDev47/pokedex-for-ci'
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/ChristianDev47/pokedex-for-ci'
       }
     }
   }
