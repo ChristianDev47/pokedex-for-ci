@@ -3,7 +3,7 @@ pipeline {
     label "jenkins-agent"
   }
   tools {
-    maven 'MavenJ'
+    maven 'Maven3'
   }
   stages {
     stage("Cleaned Workspace") {
