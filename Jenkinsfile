@@ -24,6 +24,10 @@ pipeline {
         }
       }
       steps {
+        sh 'chown -R 1000:1000 /root/.npm'
+        sh "npx browserslist@latest --update-db" 
+        sh "npm install"
+        sh "npm update webpack webpack-cli webpack-dev-server"
         sh "npm run build"
       }
     }
