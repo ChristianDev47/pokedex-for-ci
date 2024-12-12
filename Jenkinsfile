@@ -24,9 +24,6 @@ pipeline {
         }
       }
       steps {
-        sh "npx browserslist@latest --update-db" 
-        sh "npm install"
-        sh "npm update webpack webpack-cli webpack-dev-server"
         sh "npm run build"
       }
     }
