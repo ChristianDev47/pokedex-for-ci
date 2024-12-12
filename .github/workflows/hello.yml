@@ -7,11 +7,13 @@ on:
 
 jobs:
   hello_world:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Echo the message
+      - uses: actions/checkout@v4
+      - name:  'Hello World'
         run: |
-          echo "Hola midu!"
+          echo "Hola dev!"
       - name: Dime la fecha
         run: date
-      - run: ls -l
+      - name: Muestra el contenido del directorio
+        run: ls -l
