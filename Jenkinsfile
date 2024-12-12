@@ -19,7 +19,7 @@ pipeline {
     stage("Build Application") {
       agent {
         docker {
-          image 'node:latest'
+          image 'node:16'
           args '-u root'
         }
       }
