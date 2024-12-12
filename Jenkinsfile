@@ -17,7 +17,15 @@ pipeline {
     }
 
     stage("Build Application") {
+      agent {
+        docker {
+          image 'node:latest'
+          args '-u root'
+        }
+      }
       steps {
+        sh "npm install"
+        sh "npm update webpack webpack-cli webpack-dev-server"
         sh "npm run build"
       }
     }
